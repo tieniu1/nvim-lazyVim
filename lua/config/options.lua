@@ -5,3 +5,5 @@
 
 -- 禁用系统剪切板
 vim.opt.clipboard = ""
+-- 修改更新时间
+vim.opt.updatetime = 200

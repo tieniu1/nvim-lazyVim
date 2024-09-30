@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 --
 local map = LazyVim.safe_keymap_set
--- local delMap = vim.keymap.del
+local delMap = vim.keymap.del
 
 -- 使用cmd+s保存文件
 -- delMap({ "i", "x", "n", "s" }, "<C-s>")
@@ -14,3 +14,15 @@ map("n", "gl", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 
 -- 重新配置y，将复制内容写入系统剪切板
 map({ "n", "v" }, "y", '"+y')
+
+-- -- 禁用
+-- delMap("i", "<Tab>")
+-- 设置
+-- vim.keymap.set("i", "<Tab>", function()
+--   if require("fittencode").has_suggestions() then
+--     return require("fittencode").accept_line()
+--   else
+--     return "<Tab>"
+--   end
+-- end, { expr = true, silent = true })
+
