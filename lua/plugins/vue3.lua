@@ -45,15 +45,21 @@ return {
     opts = {
       servers = {
         volar = {
-
-          filetypes = {
-            "typescript",
-            "javascript",
-            "javascriptreact",
-            "typescriptreact",
-            "vue",
-            "json",
+          filetypes = { "javascript", "javascriptreact", "vue", "json" },
+          settings = {
+            volar = {
+              completion = {
+                autoImport = true,
+                useScaffoldSnippets = true,
+              },
+              codeLens = {
+                references = true,
+                pugTools = true,
+                scriptSetupTools = true,
+              },
+            },
           },
+          root_dir = require("lspconfig.util").root_pattern("package.json", "vue.config.js", ".git", "jsconfig.json"),
         },
         -- 禁用vue2 lsp
         vuels = false,
